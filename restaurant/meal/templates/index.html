@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <div class="d-flex container cards pt-5">
+        {% for mel in meal.categories %}
+
+            <div class="col-lg-4 cardss">
+
+                <div class="card  mb-4" style="width: 18rem;">
+
+                    <img src="{{ mel.strCategoryThumb }}" class="card-img-top" alt="{{ mel.strCategory }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mel.strCategory }}</h5>
+                        <p> Meal id : {{mel.idCategory}} </p>
+                        <p class="card-text"> {{ mel.strCategoryDescription | truncatewords:10 }} </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
